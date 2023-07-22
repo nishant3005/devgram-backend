@@ -160,7 +160,7 @@ router.put('/', authenticate, async (req, res) => {
     );
 
     profile.populate('user');
-    if (image == '' || image == null || image || 'undefined') {
+    if (image == '' || image == null || image == 'undefined') {
       image =
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTOkHm3_mPQ5PPRvGtU6Si7FJg8DVDtZ47rw&usqp=CAU';
       await User.findOneAndUpdate({ _id: req.user.id }, { avatar: image });
