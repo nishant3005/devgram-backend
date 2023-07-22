@@ -165,7 +165,7 @@ router.put('/', authenticate, async (req, res) => {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTOkHm3_mPQ5PPRvGtU6Si7FJg8DVDtZ47rw&usqp=CAU';
       await User.findOneAndUpdate({ _id: req.user.id }, { avatar: image });
     }
-    response.status(200).json({
+    res.status(200).json({
       msg: 'Profile is Updated Successfully',
       profile: profile,
     });
