@@ -25,6 +25,7 @@ router.post('/', authenticate, async (req, res) => {
 
     let newPost = {
       user: req.user.id,
+      title: req.user.title,
       text: req.body.text,
       image: req.body.image,
       name: user.name,
