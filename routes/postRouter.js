@@ -8,7 +8,7 @@ const router = express.Router();
 //api to create a new post
 /*
     1. url: /api/posts/
-    2. fields: text, image
+    2. fields: title, text, image
     3. method: POST
     4. access: PRIVATE
 */
@@ -25,7 +25,7 @@ router.post('/', authenticate, async (req, res) => {
 
     let newPost = {
       user: req.user.id,
-      title: req.user.title,
+      title: req.body.title,
       text: req.body.text,
       image: req.body.image,
       name: user.name,
