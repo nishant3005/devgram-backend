@@ -129,6 +129,8 @@ router.put('/', authenticate, async (req, res) => {
     }
 
     let profileObj = {
+      image:
+        image !== null || image !== '' || image !== 'undefined' ? image : '',
       user: req.user.id, //id from token
       company: company ? company : '',
       website: website ? website : '',
